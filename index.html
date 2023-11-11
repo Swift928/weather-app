@@ -5,5 +5,33 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Weather</title>
     <script defer src="main.js"></script></head>
-    <body></body>
+    <body class="bg-sky-600 flex flex-col h-screen">
+        <section>
+            <nav
+                class="h-14 flex justify-center items-center font-serif text-xl"
+            >
+                <button class="rounded-full bg-slate-800 w-24 text-neutral-100">
+                    Enter
+                </button>
+            </nav>
+        </section>
+        <section class="flex-grow px-8 pt-1 pb-8">
+            <div class="bg-blue-400 h-full rounded-xl shadow-2xl min-w-min">
+                <div class="flex flex-col items-center">
+                    <p
+                        class="locationCountry hidden sm:block text-center text-md -mb-2 mt-4"
+                    ></p>
+                    <h3
+                        class="locationName text-center text-4xl pt-12 sm:pt-0 font-light"
+                    ></h3>
+
+                    <div class="currentTemp text-8xl font-light"></div>
+                    <div class="flex gap-6">
+                        <span class="tempL"></span> <span class="tempH"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section></section>
+    </body>
 </html>
