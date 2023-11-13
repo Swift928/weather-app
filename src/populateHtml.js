@@ -10,7 +10,6 @@ const currentCondition = document.querySelector('.currentCondition');
 const weatherIcon = document.querySelector('.weatherIcon');
 
 export default function populateWeatherData(data) {
-    console.log(data);
     getHourlyUpdate(data);
     getDailyForecast(data);
     locationCountry.textContent = `${data.location.country}`;
