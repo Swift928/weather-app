@@ -1,4 +1,4 @@
 import './style.css';
-import { handleApiCall } from './apiHandle';
+import handleApiCall from './apiHandle';
 
-handleApiCall('miami');
+handleApiCall('oslo');

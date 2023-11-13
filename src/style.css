@@ -1,3 +1,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+* {
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.hourly img,
+.daily img {
+    height: 3rem;
+}
+
+.grid-rows-2 {
+    grid-template-rows: 3.5rem 1fr;
+}
+
+body {
+    background: url(./images/neom-Goe4Q0xwvwc-unsplash.jpg);
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
