@@ -7,7 +7,7 @@ const getHourlyUpdate = (data) => {
     let day = 0;
 
     console.log(data);
-    console.log(data.forecast.forecastday[day]);
+    console.log(data.forecast);
     // forecast.forecastday[0].hour[0].temp_c
 
     do {
