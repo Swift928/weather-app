@@ -6,7 +6,8 @@ const getHourlyUpdate = (data) => {
 
     let day = 0;
 
-    console.log(data.forecast.forecastday[day].hour[currentHour].temp_c);
+    console.log(data);
+    console.log(data.forecast.forecastday[day].hour[currentHour]);
 
     do {
         const averageWeather =
