@@ -2,13 +2,10 @@ const getHourlyUpdate = (data) => {
     const section = document.querySelector('.hourlyForecast');
     const hourly = document.querySelector('.hourly');
 
-    let currentHour = new Date(data.location.localtime).getHours();
-
+    const [, b] = data.location.localtime.split(' ');
+    const [c] = b.split(':');
+    let currentHour = Number(c);
     let day = 0;
-
-    console.log(data);
-    console.log(data.forecast);
-    // forecast.forecastday[0].hour[0].temp_c
 
     do {
         const averageWeather =

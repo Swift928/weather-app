@@ -1,3 +1,5 @@
+import { format, parseISO } from 'date-fns';
+
 const getDailyForecast = (data) => {
     const section = document.querySelector('.dailyForecast');
     const daily = document.querySelector('.daily');
@@ -7,10 +9,9 @@ const getDailyForecast = (data) => {
 
     for (let x = 0; x < blade.length; x += 1) {
         const dailyElement = daily.cloneNode();
-        const date = new Date(data.forecast.forecastday[x].date).toLocaleString(
-            'en-US',
-            { weekday: 'short' }
-        );
+
+        const parsedDate = parseISO(data.forecast.forecastday[x].date);
+        const date = format(parsedDate, 'EEE');
 
         dailyElement.innerHTML = `
     <p>${date}</p>
