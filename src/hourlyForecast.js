@@ -7,6 +7,10 @@ const getHourlyUpdate = (data) => {
     let currentHour = Number(c);
     let day = 0;
 
+    while (section.lastChild !== hourly) {
+        section.removeChild(section.lastChild);
+    }
+
     do {
         const averageWeather =
             data.forecast.forecastday[day].hour[currentHour].temp_c;
