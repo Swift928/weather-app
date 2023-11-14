@@ -5,6 +5,10 @@ const getDailyForecast = (data) => {
     const daily = document.querySelector('.daily');
     const dailyForecastCount = document.querySelector('.dailyForecastCount');
 
+    while (section.lastChild !== daily) {
+        section.removeChild(section.lastChild);
+    }
+
     const blade = data.forecast.forecastday;
 
     for (let x = 0; x < blade.length; x += 1) {
@@ -23,7 +27,7 @@ const getDailyForecast = (data) => {
         section.append(dailyElement);
     }
     dailyForecastCount.innerHTML = `${blade.length}-Day Forecast`;
-    section.removeChild(daily);
+    // section.removeChild(daily);
 };
 
 export default getDailyForecast;
