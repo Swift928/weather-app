@@ -1,10 +1,24 @@
 import populateWeatherData from './populateHtml';
 
+const errorMessage = document.querySelector('.errorMessage');
+
 const getWeatherData = async (location) => {
     const defaultUrl = `https://api.weatherapi.com/v1/forecast.json?key=5788f077bebc40d3b6200451230711&q=${location}&days=20`;
 
+    if (!location) {
+        return;
+    }
+
     try {
         const response = await fetch(defaultUrl, { mode: 'cors' });
+        if (response.status === 400) {
+            errorMessage.innerHTML = 'Invalid location';
+            setTimeout(() => {
+                errorMessage.innerHTML = '';
+            }, 1000);
+
+            throw new Error('Invalid location');
+        }
         const response1 = await response.json();
 
         return response1;
