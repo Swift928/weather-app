@@ -29,11 +29,16 @@ const getWeatherData = async (location) => {
 };
 
 const handleApiCall = async (enteredLocation = 'london') => {
+    const loaderElement = document.querySelector('.loaderElement');
+
     try {
+        loaderElement.classList.remove('hidden');
         const data = await getWeatherData(enteredLocation);
         populateWeatherData(data);
+        loaderElement.classList.add('hidden');
     } catch (err) {
         console.log(err);
+        loaderElement.classList.add('hidden');
     }
 };
 
