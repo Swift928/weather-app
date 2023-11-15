@@ -27,7 +27,7 @@ const getDailyForecast = (data) => {
         section.append(dailyElement);
     }
     dailyForecastCount.innerHTML = `${blade.length}-Day Forecast`;
-    // section.removeChild(daily);
+    section.removeChild(daily);
 };
 
 export default getDailyForecast;
