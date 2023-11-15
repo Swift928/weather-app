@@ -11,7 +11,6 @@ const getHourlyUpdate = (data) => {
         section.removeChild(section.lastChild);
     }
 
-    // Display the forecast for the next 12 hours
     for (let i = 0; i < 12; i += 1) {
         const averageWeather =
             data.forecast.forecastday[day].hour[currentHour].temp_c;
@@ -21,19 +20,11 @@ const getHourlyUpdate = (data) => {
 
         const hourElement = hourly.cloneNode();
 
-        if (i === 0) {
-            hourElement.innerHTML = `
-                <p>Now</p>
+        hourElement.innerHTML = `
+                <p>${i === 0 ? 'Now' : currentHour}</p>
                 <img src='${forecastedWeatherIcon}' />
                 <p>${averageWeather}\u00B0</p>
             `;
-        } else {
-            hourElement.innerHTML = `
-                <p>${currentHour}</p>
-                <img src='${forecastedWeatherIcon}' />
-                <p>${averageWeather}\u00B0</p>
-            `;
-        }
 
         section.append(hourElement);
         currentHour = (currentHour + 1) % 24;
