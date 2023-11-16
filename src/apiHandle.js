@@ -35,7 +35,6 @@ const handleApiCall = async (enteredLocation = 'london') => {
         loaderElement.classList.remove('hidden');
         const data = await getWeatherData(enteredLocation);
         populateWeatherData(data);
-        loaderElement.classList.add('hidden');
     } catch (err) {
         console.log(err);
         loaderElement.classList.add('hidden');

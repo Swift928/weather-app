@@ -8,6 +8,7 @@ const tempL = document.querySelector('.tempL');
 const tempH = document.querySelector('.tempH');
 const currentCondition = document.querySelector('.currentCondition');
 const weatherIcon = document.querySelector('.weatherIcon');
+const loaderElement = document.querySelector('.loaderElement');
 
 export default function populateWeatherData(data) {
     getHourlyUpdate(data);
@@ -19,4 +20,5 @@ export default function populateWeatherData(data) {
     weatherIcon.setAttribute('src', data.current.condition.icon);
     tempL.textContent = `L: ${data.forecast.forecastday[0].day.mintemp_c}`;
     tempH.textContent = `H: ${data.forecast.forecastday[0].day.maxtemp_c}`;
+    loaderElement.classList.add('hidden');
 }
